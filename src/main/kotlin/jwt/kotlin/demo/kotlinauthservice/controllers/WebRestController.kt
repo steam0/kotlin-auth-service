@@ -1,5 +1,6 @@
 package jwt.kotlin.demo.kotlinauthservice.controllers
 
+import jwt.kotlin.demo.kotlinauthservice.domain.exceptions.UsernameAlreadyInUseException
 import jwt.kotlin.demo.kotlinauthservice.domain.exceptions.UsernameNotProvidedException
 import jwt.kotlin.demo.kotlinauthservice.domain.models.ApplicationUser
 import jwt.kotlin.demo.kotlinauthservice.domain.repositories.ApplicationUserRepository
@@ -46,7 +47,7 @@ class WebRestController(val applicationUserRepository: ApplicationUserRepository
         val existingUser = applicationUserRepository.findUserByUsername(username)
 
         if (existingUser != null) {
-            throw UsernameNotFoundException("Username is already in use.")
+            throw UsernameAlreadyInUseException("Username is already in use.")
         }
 
         user.password = bCryptPasswordEncoder.encode(user.password)
