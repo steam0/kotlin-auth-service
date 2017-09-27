@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.1.4-3'
+		kotlinVersion = '1.1.50'
 		springBootVersion = '2.0.0.M4'
 	}
 	repositories {
@@ -40,6 +40,7 @@ repositories {
 }
 
 dependencies {
+	compile('io.jsonwebtoken:jjwt:0.7.0')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')

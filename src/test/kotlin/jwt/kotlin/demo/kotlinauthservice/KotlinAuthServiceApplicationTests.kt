@@ -1,4 +1,4 @@
-package com.example.jwt.kotlin.demo.kotlinauthservice
+package jwt.kotlin.demo.kotlinauthservice
 
 import org.junit.Test
 import org.junit.runner.RunWith
